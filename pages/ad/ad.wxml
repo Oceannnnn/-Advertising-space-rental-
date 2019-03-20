@@ -1,0 +1,5 @@
+<!--pages/ad/ad.wxml-->
+<view class='map-wrap'>
+  <map id='map' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{scale}}" bindmarkertap="bindmarkertap" polyline='{{polyline}}' show-location>
+  </map>  
+</view>

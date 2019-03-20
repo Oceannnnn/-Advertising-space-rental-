@@ -1,0 +1,74 @@
+<!--pages/confirmationOrder/confirmationOrder.wxml-->
+<import src="../../template/calendar/index.wxml" />
+<view class='confirmationOrder bor_t'>
+  <navigator class='f_34 p_30 flex_cb' url='../information/information'>
+    <view wx:if="{{name!=''}}" class='arrow_left'>
+      {{name}}
+      <view class='f_28 mt_10'>{{phone}}</view>
+    </view>
+    <view wx:else class='f_30'>
+      请填写联系您的信息
+    </view>
+    <image src='../../images/last_Dawn.png' class='arrow'></image>
+  </navigator>
+  <view class='bor_b'></view>
+  <view class='flex_i p_20 bor_b'>
+    <image src='{{info.pic}}' class='goods_img mr_20'></image>
+    <view class='goods_right f_32'>
+      <view class='sheng'>{{info.name}}</view>
+      <view class='mt_20'>时间：{{info.spec_name}}</view>
+      <view class='mt_20'>￥{{info.total_price}}</view>
+    </view>
+  </view>
+  <view class='p_30 f_32 bor_b flex_cb' bindtap='design'>
+    <view wx:if="{{design_id==''}}">
+      是否选择设计
+    </view>
+    <view wx:else class='flex_i'>
+      <image src='{{design_pic}}' class='designerImg'></image>
+      <view class='ml_20'>{{design_name}}(设计师)</view>
+    </view>
+    <image src='../../images/last_Dawn.png' class='arrow'></image>
+  </view>
+  <view class='p_30 f_32 bor_b flex_cb' bindtap='installChange'>
+    <view wx:if="{{material_id==''}}">
+      是否选择制作
+    </view>
+    <view wx:else class='flex_i'>
+      <image src='{{material_pic}}' class='designerImg'></image>
+      <view class='ml_20'>
+        <view class='mt_20'>{{material_name}}(安装材质)</view>
+        <view>费用：{{material_price}}</view>
+      </view>
+    </view>
+    <image src='../../images/last_Dawn.png' class='arrow'></image>
+  </view>
+  <view class='p_30 f_32 bor_b flex_cb'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="flex_i">
+        <checkbox value="{{install}}" checked="" style="transform:scale(.6)" />是否选择安装 <text class='f_28 c_999'>（安装费￥{{install}}）</text> 
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="calendar-wrap p_30 bor_b">
+    <view class='flex_i f_32'>
+      <view class='mr_20' bindtap='bindtapData'>请选择起始日期</view>
+      <view>{{dataTime}}</view>
+    </view>
+    <template is="calendar" data="{{...calendar}}" wx:if="{{hidden}}" />
+  </view>
+  <view class='p_30 f_30 bor_b flex_cb'>
+    <view class='flex_i'>
+      <image src='../../images/pay.png' class='pay_img mr_20'></image>
+      微信支付
+    </view>
+    <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+  </view>
+</view>
+<view class='footer bg_f flex_i'>
+  <view class='comfirm_lift flex f_30'>
+    实付款：
+    <text class='c_ea5 f_34'>￥{{newCount}}</text>
+  </view>
+  <button class='comfirm c_f f_32 mr_20' disabled="{{disabled}}" bindtap='comfirm'>立即支付</button>
+</view>

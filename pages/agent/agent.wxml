@@ -1,0 +1,13 @@
+<!--pages/agent/agent.wxml-->
+<view class='{{isChoose==1?"coupon_con":""}}'>
+  <view wx:if="{{agent!=''}}">
+    <view class='agent' wx:for="{{agent}}" wx:key="{{itemName}}" wx:for-item="itemName" class='p_30 bor_b flex_i f_30' bindtap="{{isChoose==0?'bindDesigner':'bindBack'}}" data-id="{{itemName.id}}" wx:index="{{index}}" data-index='{{index}}'>
+      <image src='{{itemName.pic}}' class='agent_img mr_20'></image>
+      <view class='ml_20'>
+        <text>{{itemName.name}}</text>
+        <view class='mt_10'>作品：{{itemName.productionNum}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='useCoupon_foot' bindtap='choose' wx:if="{{isChoose==1}}">不使用设计师</view>

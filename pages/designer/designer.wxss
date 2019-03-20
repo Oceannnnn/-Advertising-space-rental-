@@ -1,0 +1,46 @@
+/* pages/designer/designer.wxss */
+@import "../../wxParse/wxParse.wxss";
+view{
+  overflow: visible;
+}
+.broker_header image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin: 0 20rpx 10rpx 0;
+}
+.broker_header text{
+  border: 1px solid #6F81BA;
+  padding: 5rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+.zanwu {
+  margin-top: 80rpx;
+}
+.room_right{
+  width: 65%;
+  height:180rpx;
+}
+.room_title{
+  font-size: 32rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20rpx;
+}
+.room_image{
+  width: 30%;
+  height:200rpx;
+  margin-right: 20rpx;
+}
+.room_kan{
+  background: #B797C8;
+  margin-top: 20rpx;
+  display: inline-block;
+  padding: 6rpx;
+}
+.room_money{
+  font-size: 38rpx;
+  color: #FF0000;
+}

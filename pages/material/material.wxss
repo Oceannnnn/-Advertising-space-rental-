@@ -1,0 +1,2 @@
+/* pages/material/material.wxss */
+@import '../agent/agent.wxss'

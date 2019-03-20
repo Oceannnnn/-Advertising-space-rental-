@@ -1,0 +1,39 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class='p_40 flex bor_top bor_b'>
+  <image class='order_img' src='{{order.pic}}'></image>
+  <view class='ml_20 f_34'>
+    <view>{{order.name}}</view>
+    <view class='mt_20 f_32 c_999'>租用时间：{{order.specTime}}</view>
+    <view class='mt_20 f_32 c_999' wx:if="{{order.design_name!=''}}">设计师：{{order.design_name}}</view>
+    <view class='mt_20 f_32 c_999' wx:if="{{order.material_name!=''}}">材质安装：{{order.material_name}}</view>
+  </view>
+</view>
+<view class='p_40'>
+  <view class='flex_cb f_28 mb_30 c_999'>
+    <view>
+      订单号：
+    </view>
+    {{order.order_no}}
+  </view>
+  <view class='flex_cb f_28 mb_30 c_999'>
+    <view>
+      订单状态：
+    </view>
+    {{order.status}}
+  </view>
+  <view class='flex_cb f_28 mb_30 c_999'>
+    <view>
+      下单时间：
+    </view>
+    {{order.create_time}}
+  </view>
+  <view class='flex_cb f_28 c_999'>
+    <view>
+      实付款：
+    </view>
+    {{order.deal_money}}
+  </view>
+</view>
+<navigator class='footer f_28 flex_af' wx:if="{{type==1}}" url='../about/about'>
+  <view class='text'>申请退款</view> 
+</navigator>

@@ -1,0 +1,2 @@
+/* pages/designerPieces/designerPieces.wxss */
+@import "../../wxParse/wxParse.wxss";

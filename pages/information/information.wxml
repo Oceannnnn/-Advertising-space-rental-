@@ -1,0 +1,14 @@
+<!--pages/information/information.wxml-->
+<view class="input-wrap p_20">
+  <view class="input">
+    <view>联系人</view>
+    <input type="text" value="{{name}}" placeholder="请输入联系人" bindinput='bindNameChange' />
+  </view>
+  <view class="input">
+    <view>电话</view>
+    <input type="number" value="{{phone}}" placeholder="请输入11位手机号码" bindinput='bindPhoneChange' maxlength='11' />
+  </view>
+</view>
+<view class='flex_i submit_btn'>
+  <button bindtap='submit' class="sub-btn btn">保存</button>
+</view>

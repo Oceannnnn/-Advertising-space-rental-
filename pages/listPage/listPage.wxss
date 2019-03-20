@@ -1,0 +1,39 @@
+/* pages/listPage/listPage.wxss */
+@import "../index/index.wxss";
+.clear{
+  clear: both;
+  overflow: hidden;
+}
+.flex1.on{
+  border-left: 1px solid #eee;
+}
+.tabTit{
+  border-bottom: solid 1px #eee;
+  position:fixed;
+  top:0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+  font-size:30rpx;
+  padding: 30rpx 0;
+  text-align: center;
+}
+.flex1 {
+  width: 33.33%;
+  justify-content: center;
+}
+.items-body{
+  margin-top:40px;
+}
+.down{
+  width: 36rpx;
+  height: 36rpx;
+}
+picker{
+  max-width: 70%;
+  text-align: center;
+  min-width: 50%;
+}
+.picker{
+  max-width: 100%;
+}

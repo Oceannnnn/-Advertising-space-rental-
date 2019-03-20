@@ -1,0 +1,76 @@
+<!--pages/details/details.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="{{info==false?'':'page'}}">
+  <view class='main_header'>
+    <swiper indicator-dots interval="3000" duration="1000" autoplay='true' circular>
+      <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+        <swiper-item>
+          <image src="{{itemName.url}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='p_20 f_34 flex_cb'>
+    <view class='details_left'>
+      <view class='sheng2 details_title f_32'>{{pro_info.name}}</view>
+      <view class="price c_ea5 mt_20">￥{{pro_info.money}}</view>
+      <view class='flex_i mt_20 c_999 f_24'>
+      <view class='mr_20'>销量：{{pro_info.sales}}</view>
+      <view>浏览量：{{pro_info.saw}}</view>
+      </view>
+    </view>
+    <view class='details_right f_28 flex_af c_999'>
+      <image src='../../images/share.png' class='image mb_20'></image>
+      分享
+      <button open-type='share' class='details_btn'></button>
+    </view>
+  </view>
+  <view class='bor_top f_32 p_20' wx:if="{{pro_info.type==1}}">
+    注：该广告位已被租用（灰色区域为已出租时段）
+    <view class='mt_10' wx:if="{{pro_info.end_time!=0}}">租用截止日期：{{pro_info.end_time}}</view>
+  </view>
+  <view class='bor_top f_32 goods_body'>
+    <view class='p_20 bor_bom'>商品详情</view>
+    <view class='content p_20'>
+      <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    </view>
+  </view>
+  <view class='goods_footer flex_i f_28'>
+    <navigator class='flex_af footer_item' open-type='switchTab' url='../index/index'>
+      <image src='../../images/back.png' class='image mb_10 mt_10'></image>
+      首页
+    </navigator>
+    <view class='flex_af footer_item bor_l' bindtap='collect'>
+      <image src='../../images/collect{{collect==1?"_on":""}}.png' class='image mb_10 mt_10'></image>
+      收藏
+    </view>
+    <view class='footer_item c_f mall_left flex_faj {{pro_info.type!=1?"":"on"}}' data-type="1" bindtap='buy'>
+      立即预约
+    </view>
+    <view class='footer_item c_f mall_right flex_faj' bindtap='buy' data-type='0' wx:if="{{pro_info.type!=1}}">
+      立即购买
+    </view>
+  </view>
+</view>
+<view class='info_con' hidden="{{!info}}">
+  <view class='info_bg'></view>
+  <view class='infoBody'>
+    <image class='info_img' src='{{pro_info.pic}}'></image>
+    <view class='info_title'>
+      <view class='c_ea5'>￥{{shopMoney}}</view>
+      <view class='sheng f_28 mt_10'>时间：{{shopContent}}</view>
+    </view>
+    <image class='icon-cha' src='../../images/cha.png' bindtap='close'></image>
+    <view class='info_body bor_t'>
+      <view class='info_specifications p_20' wx:if="{{checkboxList!=''}}">
+        <view class='f_30 mb_10 mt_10'>时间</view>
+        <view class='flex_i flex_f'>
+          <view wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex" wx:key="attrValueObj" class='info_item sheng {{attrValueObj.state==1?"active":""}}' bindtap="selectAttrValue" data-index='{{attrIndex}}'>
+            {{attrValueObj.spec_name}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='info_footer c_f f_32' bindtap='comfirm'>确定</view>
+  </view>
+</view>

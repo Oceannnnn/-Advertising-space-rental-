@@ -1,0 +1,30 @@
+<!--pages/listPage/listPage.wxml-->
+<view class="tabTit flex_i bor_t">
+  <view class="flex1 {{index==0?'':'on'}} flex_i" wx:for="{{tabTxt}}" wx:key="tabTxt" data-index="{{index}}">
+    <picker bindchange="bindSceneChange" value="{{indexScene}}" range-key="{{'name'}}" range="{{arrayScene}}" wx:if="{{index==0}}">
+      <view class="picker sheng">
+        {{item.name}}
+      </view>
+    </picker>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" wx:if="{{index==1}}">
+      <view class="picker sheng">
+        <text wx:if="{{region==''}}">{{item.name}}</text>{{region[2]}}
+      </view>
+    </picker>
+    <picker bindchange="bindPriceChange" value="{{indexPrice}}" range-key="{{'name'}}" range="{{arrayPrice}}" wx:if="{{index==2}}">
+      <view class="picker sheng">
+        <text wx:if="{{!indexPrice}}">{{item.name}}</text>{{arrayPrice[indexPrice].name}}
+      </view>
+    </picker>
+    <image src='../../images/down.png' class='down ml_10'></image>
+  </view>
+</view>
+<view class='items-body flex_f'>
+  <view wx:for="{{itemsList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='item_list p_20 bor_b pr' data-id='{{itemName.id}}' bindtap='details'>
+    <view class="item-img mb_20">
+      <image class="lazy" src="{{itemName.pic}}" />
+    </view>
+    <view class='sheng2 f_32 mb_20'>{{itemName.name}}</view>
+    <view class='f_30 price'>{{itemName.money}}</view>
+  </view>
+</view>

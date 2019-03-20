@@ -1,0 +1,32 @@
+<!--pages/allorder/allorder.wxml-->
+<view class="nav-scroll f_32">
+  <view class="scroll-view_H">
+    <view wx:for="{{HeaderList}}" wx:key="item" data-id="{{item.id}}" bindtap='toList' class="nav-name">
+      <text class="p_20 {{item.id == currentId ? 'nav-hover' : ''}}">{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{orderList!=''}}" class='body_scroll'>
+  <view class='p_20 bor_b' wx:for="{{orderList}}" wx:key="{{orderList}}">
+    <view class='f_30'>订单号：{{item.order_no}}</view>
+    <view class='flex mt_20'>
+      <image class='order_img' src='{{item.pic}}'></image>
+      <view class='orderRight ml_20'>
+        <view class='f_28'>{{item.name}}</view>
+        <view class='f_30 mt_20'>￥{{item.deal_money}}</view>
+        <view class='f_28 mt_20' wx:if="{{item.design_name!=''}}">设计师：{{item.design_name}}</view>
+        <view class='f_28 mt_20' wx:if="{{item.material_name!=''}}">材质安装：{{item.material_name}}</view>
+        <view class='f_28 mt_20'>租用时间：{{item.specTime}}</view>
+        <view class='f_28 c_999 mt_20'>购买时间：{{item.create_time}}</view>
+        <view class='flex order_footer f_28'>
+          <view class='footer_item' wx:if="{{currentId==0}}" data-id="{{item.id}}" bindtap='transfer'>立即支付</view>
+          <view class='footer_item' wx:else data-id="{{item.product_id}}" bindtap='details'>续租</view>
+          <view class='footer_item on' bindtap='orderDetails' data-id="{{item.id}}">订单详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='flex_af body_none'>
+  <text class='f_30'>当前还没有购买记录</text>
+</view>

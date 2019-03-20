@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/material/material",
+    "pages/confirmationOrder/confirmationOrder",
+    "pages/agent/agent",
+    "pages/details/details",
+    "pages/information/information",
+    "pages/collection/collection",
+    "pages/appointment/appointment",
+    "pages/orderDetails/orderDetails",
+    "pages/allorder/allorder",
+    "pages/listPage/listPage",
+    "pages/designer/designer",
+    "pages/designerPieces/designerPieces",
+    "pages/ad/ad",
+    "pages/my/my",
+    "pages/about/about",
+    "pages/category/category"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "广告位",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fff",
+    "selectedColor": "#138BC8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_ac.png"
+      },
+      {
+        "pagePath": "pages/ad/ad",
+        "text": "地图广告",
+        "iconPath": "images/dt.png",
+        "selectedIconPath": "images/dt_ac.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_ac.png"
+      }
+    ]
+  }
+}

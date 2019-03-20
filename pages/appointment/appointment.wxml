@@ -1,0 +1,22 @@
+<!--pages/appointment/appointment.wxml-->
+<view wx:if="{{appointmentList!=''}}">
+  <view class='p_20 bor_b' wx:for="{{appointmentList}}" wx:key="{{appointmentList}}">
+    <view class='f_30'>订单号：{{item.order_no}}</view>
+    <view class='flex mt_20'>
+      <image class='order_img' src='{{item.pic}}'></image>
+      <view class='orderRight ml_20'>
+        <view class='f_28'>{{item.name}}</view>
+        <view class='f_30 mt_20'>￥{{item.deal_money}}</view>
+        <view class='f_28 mt_20'>预约时间：{{item.specTime}}</view>
+        <view class='f_28 mt_20'>下单时间：{{item.create_time}}</view>
+        <view class='f_28 mt_20' wx:if="{{item.design_name!=''}}">设计师：{{item.design_name}}</view>
+        <view class='flex order_footer f_28'>
+          <navigator class='footer_item' url='../about/about'>取消预约</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='flex_af body_none'>
+  <text class='f_30'>当前还没有预约记录</text>
+</view>

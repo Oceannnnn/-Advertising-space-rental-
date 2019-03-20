@@ -1,0 +1,13 @@
+<!--pages/agent/agent.wxml-->
+<view class='{{isChoose==1?"coupon_con":""}}'>
+  <view wx:if="{{material!=''}}">
+    <view class='material' wx:for="{{material}}" wx:key="{{itemName}}" wx:for-item="itemName" class='p_30 bor_b flex_i f_30' bindtap="{{isChoose==0?'':'bindBack'}}" data-id="{{itemName.id}}" wx:index="{{index}}" data-index='{{index}}'>
+      <image src='{{itemName.pic}}' class='agent_img mr_20'></image>
+      <view class='ml_20'>
+        <text>材质：{{itemName.name}}</text>
+        <view class='mt_10'>费用：{{itemName.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='useCoupon_foot' bindtap='choose' wx:if="{{isChoose==1}}">不使用安装材质</view>

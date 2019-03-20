@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<view class='bor_t flex_i'>
+  <view class='m_location flex_i'>
+    <image src='../../images/location.png' class='ml_20'></image>
+    <view bindtap="selectDistrict">{{location}}</view>
+    <view class="animation-element-wrapper" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+      <view class="picker-view">
+        <view class='bor_b w100 p_40 flex_cb c_999'>
+          <view catchtap="cityCancel" class='ml_20'>取消</view>
+          <view catchtap="citySure" class='mr_20'>确定</view>
+        </view>
+        <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+          <picker-view-column>
+            <view wx:for="{{provinces}}" class="picker-item" wx:key="">
+              {{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{citys}}" class="picker-item" wx:key="">
+              {{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{areas}}" class="picker-item" wx:key="">
+              {{item.name}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </view>
+  <view class='i_header'>
+    <view class='i_search'>
+      <input placeholder='搜索广告位' bindconfirm='bindInputChange'></input>
+    </view>
+  </view>
+</view>
+<view class='main_header'>
+  <swiper indicator-dots interval="3000" duration="1000" autoplay='true' circular>
+    <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item>
+        <image src="{{itemName.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='banner flex_i pr mb_20'>
+  <view class='bannerItem flex_af mt_20' wx:for="{{gener}}" wx:key="{{gener}}" wx:if="{{index<8}}" wx:for-index="index" data-id="{{item.id}}" bindtap="listPage">
+    <image src="{{item.pic}}" class='bannerImg'></image>
+    <view class='f_28 mt_10 tc'>{{item.name}}</view>
+  </view>
+</view>
+<view class='p_20 bor_b bor_top'>
+  <view class='flex_cb mb_20'>
+    <view class='f_32'>优秀设计师</view>
+    <navigator class='f_28' url='../agent/agent'>更多</navigator>
+  </view>
+  <scroll-view scroll-x="true" class='scroll-view_H'>
+    <view wx:for="{{agentList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='agentList p_20' bindtap="bindDesigner" data-id="{{itemName.id}}">
+      <view class='flex_i'>
+        <image src='{{itemName.pic}}'></image>
+        <view class='f_32 ml_20'>
+          <view>{{itemName.name}}</view>
+          <view class='f_28 c_999 mt_10'></view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='flex_ja f_32 p_20 bor_b' wx:if="{{itemsList!=''}}">
+  <text class='t_text'>- 广告位推荐 -</text>
+</view>
+<view class="items-body flex_f">
+  <view wx:for="{{itemsList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='item_list p_20 bor_b pr' data-id='{{itemName.id}}' bindtap='details'>
+    <view class="item-img mb_20">
+      <image class="lazy" src="{{itemName.pic}}" />
+    </view>
+    <view class='sheng2 f_32 mb_20'>{{itemName.name}}</view>
+    <view class='f_30 price'>{{itemName.money}}</view>
+  </view>
+</view>
+<view class='kefu bg_f flex_faj pr'>
+  <button open-type="contact" class="formBtn"></button>
+  <image src='../../images/kefu.png' class='cart'></image>
+</view>

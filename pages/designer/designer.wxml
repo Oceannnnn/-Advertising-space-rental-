@@ -1,0 +1,36 @@
+<!--pages/designer/designer.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='p_20 bor_bom bor_t'>
+  <view class='broker_header flex_i'>
+    <image src='{{info.pic}}'></image>
+    <view>
+      {{info.name}}
+      <text class='f_28 c_6f8'>设计师</text>
+    </view>
+  </view>
+  <view class='f_28 c_999 mt_20'>作品
+    <text class='c_ea5'>{{info.productionNum}}</text>
+  </view>
+  <view class='bg_f f_32 mt_20'>
+    <view>简介：</view>
+    <view class='mt_10'>
+      <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    </view>
+  </view>
+</view>
+<view class='f_32 p_20 bor_b'>作品展示</view>
+<view wx:if="{{designerList!=''}}">
+  <view wx:for="{{designerList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='roomList flex_i p_20 bor_b' data-id="{{itemName.id}}" bindtap='designerList'>
+    <image src='{{itemName.pic}}' class='room_image'></image>
+    <view class='room_right flex_cd'>
+      <view class='room_title sheng2'>{{itemName.name}}</view>
+      <view class='room_money'>
+        ￥{{itemName.price}}
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='flex_fa c_999 f_32'>
+  <image src='../../images/zanwu.png' class='zanwu mb_20'></image>
+  暂无数据
+</view>

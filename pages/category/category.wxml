@@ -1,0 +1,24 @@
+<!--pages/category/category.wxml-->
+<view class='{{type==1?"page":""}}'>
+  <view class='p_20' wx:if="{{type==1}}">
+    <view class='c_f57 f_32'>
+      <view class='categoryX'>
+        发布须知
+      </view>
+    </view>
+    <view class='f_32 mt_20 mb_20'>
+      请勿发布微商售货，代理、黄色信息、微粒贷等虚假信息，一经发现删帖拉黑处理!如有疑问，请联系客服。
+    </view>
+    <view class='bor_b'></view>
+    <view class='f_32 mt_20'>
+      请选择您要发布的栏目
+    </view>
+  </view>
+  <view class='banner flex_i pr mt_20'>
+    <view class='bannerItem flex_af' wx:for="{{gener}}" wx:key="{{gener}}" data-id="{{item.id}}" data-title="{{item.title}}" bindtap="toContent">
+      <image src="{{item.pic}}" class='bannerImg'></image>
+      <view class='f_32 mt_20'>{{item.title}}</view>
+    </view>
+  </view>
+</view>
+

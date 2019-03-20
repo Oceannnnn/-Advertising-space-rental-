@@ -1,0 +1,143 @@
+/**index.wxss**/
+
+.i_header {
+  padding: 20rpx 0;
+  width: 80%;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+.m_location {
+  width: 20%;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+  justify-content: center;
+}
+
+.i_search {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #333;
+  border-radius: 10rpx;
+  padding: 5rpx 20rpx;
+}
+
+.i_search image, .m_location image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.main_header swiper {
+  height: 375rpx;
+  width: 100%;
+}
+
+.main_header swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  flex-wrap: wrap;
+}
+
+.bannerItem {
+  width: 25%;
+}
+
+.bannerImg {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.items-body {
+  justify-content: space-between;
+}
+
+.item_list {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.item_list:nth-child(odd) {
+  border-right: 1px solid #ccc;
+}
+
+.lazy {
+  width: 100%;
+  height: 330rpx;
+}
+
+.t_text {
+  border-bottom: 2px solid #000;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.agentList {
+  padding: 20rpx 30rpx;
+  border: 1px solid #eee;
+  display: inline-block;
+  margin-right: 40rpx;
+  position: relative;
+}
+
+.agentList image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.kefu {
+  border: 1px solid #989898;
+  width: 75rpx;
+  height: 75rpx;
+  position: fixed;
+  right: 40rpx;
+  bottom: 60rpx;
+  border-radius: 50%;
+}
+
+.cart {
+  width: 70%;
+  height: 70%;
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index: 12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+.animation-element-wrapper {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
